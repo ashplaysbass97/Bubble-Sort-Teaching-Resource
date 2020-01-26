@@ -1,0 +1,68 @@
+
+input { 
+    text-align: center; 
+}
+
+.vertical-center {
+    min-height: calc(100% - 40px);
+    min-height: calc(100vh - 40px);
+  
+    display: flex;
+    align-items: center;
+    border: 0;
+}
+
+.container {
+    text-align: center; 
+}
+
+#level {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.form-control.is-valid, .form-control.is-invalid {
+    background-image: none;
+    padding: 6px 12px;
+}
+
+#submit {
+    width: 80px;
+    height: 60px;
+}
+
+.output {
+    pointer-events: none;
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.passCol {
+    width: 110px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.submitCol {
+    width: 110px;
+    padding-left: 0px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
