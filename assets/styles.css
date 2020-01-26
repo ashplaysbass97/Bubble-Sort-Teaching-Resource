@@ -21,10 +21,26 @@ input {
     margin-bottom: 20px;
 }
 
-.form-control {
-    margin-right: 20px;
+#input {
+    margin-bottom: 20px;
+}
+
+.input {
     width: 60px;
     height: 60px;
+    display: inline-block;
+    margin-right: 20px;
+    cursor: move !important;
+
+    color: #212529;
+    background-color: #fff;
+    border-color: #212529;
+}
+
+.hover {
+    color: #212529;
+    background-color: #ececec;
+    border-color: #e6e5e5;
 }
 
 .form-control.is-valid, .form-control.is-invalid {
@@ -42,17 +58,14 @@ input {
     margin-right: 20px;
     width: 60px;
     height: 60px;
+    display: inline-block;
 }
 
-.passCol {
-    width: 110px;
+.extraCol {
+    width: 80px;
     text-align: right;
+    display: inline-block;
     padding-right: 20px;
-}
-
-.submitCol {
-    width: 110px;
-    padding-left: 0px;
 }
 
 /* Chrome, Safari, Edge, Opera */

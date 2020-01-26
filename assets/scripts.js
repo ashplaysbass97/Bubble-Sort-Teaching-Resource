@@ -51,11 +51,17 @@ function bubbleSort(array) {
 }
 
 function createInputRow() {
-    var inputHTML = '<div class="row justify-content-center" style="padding-bottom: 20px"><div class="col-auto passCol"></div><div class="col-auto"><div class="row justify-content-center">';
+    var el = document.getElementById('input');
+    new Sortable(el, {
+        animation: 150,
+        ghostClass: 'hover'
+    });
+
+    var inputHTML = '<div class="extraCol"></div>';
     for (var i = 0; i < score; i++) {
-        inputHTML += '<input type="number" class="form-control" id="input' + i + '"></input>';
+        inputHTML += '<button type="button" class="btn input">' + passes[passCount][i] + '</button>';
     }
-    $('#input').html(inputHTML + '</div></div><div class="col-auto submitCol"><button class="btn btn-success" id="submit">Submit</button></div></div></div>');
+    $('#input').html(inputHTML + '<button class="btn btn-success" id="submit">Submit</button>');
 
     // submit button handler
     $("#submit").click(function(e) {
@@ -65,23 +71,24 @@ function createInputRow() {
 }
 
 function appendOutputRow() {
-    var outputHTML = '<div class="row justify-content-center" style="padding-bottom: 20px"><div class="col-auto passCol align-self-center">' + (passCount === 0 ? 'Unsorted' : 'Pass ' + passCount) + ':</div><div class="row justify-content-center"><div class="col-auto">';
+    var outputHTML = '<div class="row justify-content-center" style="padding-bottom: 20px"><div class="extraCol">' + (passCount === 0 ? 'Unsorted' : 'Pass ' + passCount) + ':</div>';
     for (var i = 0; i < score; i++) {
         outputHTML += '<button class="btn btn-outline-success output">' + (passCount === 0 ? unsortedList[i] : passes[passCount][i]) + '</button>';
     }
-    $('#output').prepend(outputHTML + '</div><div class="col-auto submitCol"></div></div></div>');
+    $('#output').prepend(outputHTML + '<div class="extraCol"></div></div>');
 }
 
 function submit() {
     var correct = true;
+    var inputs = $('.input');
     for (var i = 0; i < score; i++) {
-        if ($('#input' + i).val() != passes[passCount + 1][i]) {
-            $('#input' + i).removeClass('is-valid');
-            $('#input' + i).addClass('is-invalid');
+        if ($(inputs[i]).text() != passes[passCount + 1][i]) {
+            $(inputs[i]).removeClass('is-valid');
+            $(inputs[i]).addClass('is-invalid');
             correct = false;
         } else {
-            $('#input' + i).removeClass('is-invalid');
-            $('#input' + i).addClass('is-valid');
+            $(inputs[i]).removeClass('is-invalid');
+            $(inputs[i]).addClass('is-valid');
         }
     }
 
