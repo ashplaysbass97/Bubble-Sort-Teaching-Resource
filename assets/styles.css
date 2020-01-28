@@ -1,14 +1,8 @@
-
-input { 
-    text-align: center; 
-}
-
 .vertical-center {
-    min-height: calc(100% - 40px);
-    min-height: calc(100vh - 40px);
-  
     display: flex;
     align-items: center;
+    min-height: calc(100% - 40px);
+    min-height: calc(100vh - 40px);
     border: 0;
 }
 
@@ -17,22 +11,22 @@ input {
 }
 
 #level {
+    margin-bottom: 20px;
     text-align: center;
+}
+
+#input {
     margin-bottom: 20px;
 }
 
-form {
-    margin-bottom: 20px;
-}
-
-#input, #submit {
+#numbers, #submit {
     display: inline-block;
 }
 
 .outline {
+    display: inline-block;
     width: 60px;
     height: 60px;
-    display: inline-block;
     margin-right: 20px;
     cursor: move !important;
 }
@@ -55,24 +49,25 @@ form {
     border-color: #28a745;
 }
 
-#submit {
+#submitButton {
     width: 80px;
     height: 60px;
 }
 
 .output {
-    pointer-events: none;
-    margin-right: 20px;
+    display: inline-block;
     width: 60px;
     height: 60px;
-    display: inline-block;
+    margin-right: 20px;
+    pointer-events: none;
 }
 
 .extraCol {
-    width: 80px;
-    text-align: right;
     display: inline-block;
+    width: 80px;
+    line-height: 60px;
     padding-right: 20px;
+    text-align: right;
 }
 
 /* Chrome, Safari, Edge, Opera */

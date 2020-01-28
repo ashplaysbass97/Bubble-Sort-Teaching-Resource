@@ -51,20 +51,25 @@ function bubbleSort(array) {
 }
 
 function createInputRow() {
-    var el = document.getElementById('input');
-    new Sortable(el, {
-        animation: 150,
-        ghostClass: 'hover'
-    });
-
+    // display numbers
     var inputHTML = '<div class="extraCol"></div>';
     for (var i = 0; i < score; i++) {
         inputHTML += '<button type="button" class="btn outline dark">' + passes[passCount][i] + '</button>';
     }
-    $('#input').html(inputHTML);
+    $('#numbers').html(inputHTML);
+
+    // initialise sortable list
+    var numbers = document.getElementById('numbers');
+    new Sortable(numbers, {
+        animation: 150,
+        ghostClass: 'hover'
+    });
+
+    // display submit button
+    $('#submit').html('<button class="btn btn-success" id="submitButton">Submit</button>');
 
     // submit button handler
-    $("#submit").click(function(e) {
+    $("#submitButton").click(function(e) {
         e.preventDefault();
         submit();
     });
