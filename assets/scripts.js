@@ -59,7 +59,7 @@ function createInputRow() {
 
     var inputHTML = '<div class="extraCol"></div>';
     for (var i = 0; i < score; i++) {
-        inputHTML += '<button type="button" class="btn input">' + passes[passCount][i] + '</button>';
+        inputHTML += '<button type="button" class="btn outline dark">' + passes[passCount][i] + '</button>';
     }
     $('#input').html(inputHTML + '<button class="btn btn-success" id="submit">Submit</button>');
 
@@ -80,15 +80,17 @@ function appendOutputRow() {
 
 function submit() {
     var correct = true;
-    var inputs = $('.input');
+    var inputs = $('#input').find('.outline');
     for (var i = 0; i < score; i++) {
         if ($(inputs[i]).text() != passes[passCount + 1][i]) {
-            $(inputs[i]).removeClass('is-valid');
-            $(inputs[i]).addClass('is-invalid');
+            $(inputs[i]).removeClass('dark');
+            $(inputs[i]).removeClass('valid');
+            $(inputs[i]).addClass('invalid');
             correct = false;
         } else {
-            $(inputs[i]).removeClass('is-invalid');
-            $(inputs[i]).addClass('is-valid');
+            $(inputs[i]).removeClass('dark');
+            $(inputs[i]).removeClass('invalid');
+            $(inputs[i]).addClass('valid');
         }
     }
 

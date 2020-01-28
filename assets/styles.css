@@ -26,26 +26,30 @@ input {
 }
 
 .input {
+.outline {
     width: 60px;
     height: 60px;
     display: inline-block;
     margin-right: 20px;
     cursor: move !important;
+}
 
+.dark {
     color: #212529;
     background-color: #fff;
     border-color: #212529;
 }
 
-.hover {
-    color: #212529;
-    background-color: #ececec;
-    border-color: #e6e5e5;
+.sortable-chosen {
+    opacity: 0.6;
 }
 
-.form-control.is-valid, .form-control.is-invalid {
-    background-image: none;
-    padding: 6px 12px;
+.invalid {
+    border-color: #dc3545;
+}
+
+.valid {
+    border-color: #28a745;
 }
 
 #submit {
