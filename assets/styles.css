@@ -13,7 +13,7 @@ input {
 }
 
 .container {
-    text-align: center; 
+    text-align: center;
 }
 
 #level {
@@ -21,11 +21,14 @@ input {
     margin-bottom: 20px;
 }
 
-#input {
+form {
     margin-bottom: 20px;
 }
 
-.input {
+#input, #submit {
+    display: inline-block;
+}
+
 .outline {
     width: 60px;
     height: 60px;

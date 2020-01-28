@@ -61,7 +61,7 @@ function createInputRow() {
     for (var i = 0; i < score; i++) {
         inputHTML += '<button type="button" class="btn outline dark">' + passes[passCount][i] + '</button>';
     }
-    $('#input').html(inputHTML + '<button class="btn btn-success" id="submit">Submit</button>');
+    $('#input').html(inputHTML);
 
     // submit button handler
     $("#submit").click(function(e) {
